@@ -1,0 +1,17 @@
+# Site settings
+title: krues8dr.com Slides
+email: bill@krues8dr.com
+
+description: > # this means to ignore newlines until "baseurl:"
+  Slide decks for Bill Hunt
+
+baseurl: "/slides"
+url: "https://krues8dr.github.io/slides/"
+
+# Build settings
+markdown: redcarpet
+
+collections:
+  slides:
+    output: true
+    permalink: "/:path/"
