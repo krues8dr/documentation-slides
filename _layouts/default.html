@@ -14,6 +14,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/reveal.css">
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/theme/18f.css" id="theme">
 
@@ -40,6 +41,7 @@
     <header>
       <a href="http://krues8dr.com">Krues8dr.com</a>
     </header>
+
     <div class="reveal">
       <div class="slides">
         <section data-markdown data-separator="^---$" data-separator-vertical="^--$" data-notes="^Note:">
@@ -74,6 +76,43 @@
           { src: '{{site.baseurl}}/assets/plugin/zoom-js/zoom.js', async: true },
           { src: '{{site.baseurl}}/assets/plugin/notes/notes.js', async: true }
         ]
+      });
+
+      var clicker;
+      function toggleNotes() {
+        var elements = document.querySelectorAll('.reveal blockquote');
+console.log(elements);
+        // dataset doesn't support real booleans.
+        for(var i = 0; i < elements.length; i++) {
+          if(clicker.dataset.state === 'true') {
+            elements[i].classList.remove('hide');
+            clicker.dataset.state = 'false';
+          }
+          else {
+            elements[i].classList.add('hide');
+            clicker.dataset.state = 'true';
+          }
+        }
+      };
+
+
+      Reveal.addEventListener( 'ready', function( event ) {
+
+        var span = document.createElement('span');
+        span.classList.add('fa', 'fa-commenting');
+
+        clicker = document.createElement('a');
+        clicker.classList.add('commentary-toggle-button');
+        clicker.appendChild(span);
+        clicker.onclick = toggleNotes;
+
+        var toggle = document.createElement('div');
+        toggle.classList.add('commentary-toggle');
+        toggle.appendChild(clicker);
+
+        document.querySelector('body').appendChild(toggle);
+
+        toggleNotes();
       });
 
     </script>
