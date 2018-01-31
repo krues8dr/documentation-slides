@@ -12,9 +12,17 @@ title: Sample slide deck
 --
 
 # Government Data
-<a href="https://www.statedecoded.com/"><img src="/slides/assets/img/government-data/statedecoded.png" width="350"></a>  <a href="https://mymadison.io"><img src="/slides/assets/img/government-data/madison.png" width="350"></a>
+<a href="https://www.data.gov/"><img src="/slides/assets/img/government-data/datagov.png" width="410"></a>
 
-> I’ve spent the last four years focused on opening up legal data for citizen engagement.  These are the two main projects I’ve been focused on: The State Decoded, which shows the law online, and Madison, which does the same for legislation. These projects are used all over the world today to help the people have a voice in their government. Now, to put these sites together, we had to solve a lot of different types of problems - technical, legal, and most importantly, culture.
+> I used to work at non-profits focusing on opening government data from outside, but these days I work on it from inside. This is data.gov, one of the projects our office works on with GSA. It’s one of the largest collections of U.S. government data.
+
+--
+
+# Government Data
+
+data + policy + technology = open data
+
+> You learned in the previous session of this class about the history of open data. Here’s my 30 second version of how open data gets made: when you take government data, apply good open policies, and pass the result through some technology, you end up with open government data.
 
 --
 
@@ -23,10 +31,10 @@ title: Sample slide deck
 * Almost never available via an API
 * Rarely standards-compliant
 * Usually proprietary format (Microsoft Excel, etc.)
-* Frequently “dirty”, Not normalized across sources
+* No consistent naming/numbering, hard to compare data across sources
 * Can’t easily be shared or bookmarked
 
-> With regard to the technical issues, we have to start with the fact that government data, on the whole, is just not very good.  When you go to a government website to get data, most of the time you’re going to spend a lot of time digging for what you’re looking for.  You learned about APIs in your reading already – but you’re not going to see many APIs right now for government data. Instead, you’re probably going to find an Excel spreadsheet or a PDF with a couple of rows of unhelpful headers at the top and filled with dozens of acronyms and abbreviations that are incomprehensible. Once you get past that, you’re going to discover that every file has a slightly different format, and there’s no simple way to compare data from different sources.  The government mostly doesn’t use a consistent naming or numbering system between departments, so if you want to combine data from different places, it’s almost impossible to do so.  A lot of government websites still use outdated systems for sharing these files, which frequently make it hard to share links to this data or bookmark it for later.
+> However, government isn’t always good at the technology step. When you go to a government website to get data, most of the time you’re going to spend a lot of time digging for what you’re looking for. You learned about APIs in your reading already – but you’re not going to see many APIs right now in the wild for government data. Instead, you’re probably going to find an Excel spreadsheet or a PDF filled with dozens of acronyms that are incomprehensible. Once you get past that, you’re going to discover that every file has a slightly different format and headers, making it hard to compare data from different sources. The government mostly doesn’t use a consistent naming or numbering system, so if you want to combine data from different sources, it’s almost impossible to do so. A lot of government websites still use outdated systems for sharing these files, which frequently make it hard to share links to this data or bookmark it for later.
 
 --
 
@@ -36,7 +44,7 @@ title: Sample slide deck
 * Present accessible user interfaces & visualizations for existing data in way that people can understand
 * Create new ways of viewing, searching, and interacting with the data - charts, tables, maps, APIs, etc.
 
-> Most open data projects seek to solve those problems.  The majority of them present the information in a way that is intended to be easily understood.  Many go further and allow users to interact with the data in an entirely new way. This can be a single blog post or news article where a journalist digs into a particular piece of data to find trends to share them. Or it may be an entire toolkit to let users manipulate data on their own to find or follow changes.
+> A lot of open data projects seek to solve those problems. The majority of them present the information in a way that is intended to be easily understood - often through summaries, charts, and graphs. Many go further and allow users to interact with the data in an entirely new way, like a blog post or news article where a journalist digs combines data from various sources to reveal different trends.
 
 --
 
@@ -44,11 +52,13 @@ title: Sample slide deck
 
 <img src="/slides/assets/img/government-data/statedecoded-process.jpeg" width="200" style="float: right;">
 
-The State Decoded takes XML from government sources (or their legal publishers), cleans it, and displays it in a user-friendly, accessible format.
+The State Decoded takes XML from government sources, cleans it, and displays it in a user-friendly, accessible format.
+
+Adds in case law and hearing videos.
 
 Allows users to comment on laws, and send those comments directly to lawmakers.
 
-> Going back to one of my own projects, The State Decoded puts the law online. In many places, you still can’t view the law online, or it’s behind a paywall or some terms and conditions that make it unusable, or the website is not accessible to users with visual impairment, or any number of other barriers to free use of the law. And even in places where you can get access to the law online, the official copy is almost always the printed version, not the digital version, but that’s another talk. So, for our project, we get the legal code provided by government publishers as some really awful XML, transform it into cleaned up data, and then show that on a website.  Along the way, we add inline definitions, cross-references, a search system, and lots of other useful things – all using the original legal code as a source.  We then add a commenting system on top of the law web pages to let users leave comments for lawmakers.
+> One of the independent projects I work on, The State Decoded, puts legal codes online for free. In many places, you still can’t view the law on the web without an expensive subscription to a private website. So, for our project, we get the legal code provided by government publishers as some really awful XML data, clean it up, and then put it on a website. Along the way, we add inline definitions, cross-references, a search system, and lots of other useful things – all using the original legal code as a source. We then add additional sources of data and cross-reference it: case law from The Court Listener website, videos from legislative hearings, and so on. Finally, we added a commenting system to let users leave comments for lawmakers on the laws themselves.
 
 --
 
@@ -61,7 +71,7 @@ How to Open Data:
 * Put it online.
 * ???
 
-> So, here are the basic steps that we’ve been using to create open data projects in the past. First you need to get some data. Then you’re probably going to have to clean it up a *lot*.  Then you put it online in some form.  After that comes, well, a lot of complicated concerns that we’ll come back to in a bit.
+> So, here are the basic steps that we’ve been using to create open data projects. First you need to get some data. Then you’re probably going to have to clean it up a *lot*.  Then you put it online in some form.  After that comes, well, a lot of complicated concerns that we’ll come back to in a bit.
 
 --
 
@@ -85,7 +95,7 @@ Agencies may be required to report data due to regulations.
 
 &nbsp;
 
-> Now, if you need more general or more granular data, you can start looking at what else the agency publishes. Many government agencies are required to report data due to federal, state, or local regulations.  Here’s some of the first government data I worked on, as a federal contractor.  The data here is from the FTA, showing information aggregated from local transit agencies.  The FTA regulations require that every city’s transit agency report specific pieces of information that are used to track safety and security – everything from accidents to the number of riders to miles of rail track to income.  Data is recorded for monthly periods and broken down by the type of service – rail, bus, and so forth.  Now if the data is not in this spreadsheet, there’s a good chance the agency isn’t keeping track of it.  Or they keep track of it internally but are under no obligation to publish it by federal regulations.  So how can we find out something that’s not here?
+> Many government agencies are required to report data due to federal, state, or local regulations.  Here’s some of the first government data I worked on, as a federal contractor.  The data here is from the FTA, showing information aggregated from local transit agencies.  The FTA regulations require that every city’s transit agency report specific pieces of information that are used to track safety and security – everything from accidents to the number of riders to miles of rail track to income.  Data is recorded for monthly periods and broken down by the type of service – rail, bus, and so forth.  Now if the data is not in this spreadsheet, there’s a good chance the agency isn’t keeping track of it.  Or they keep track of it internally but are under no obligation to publish it by federal regulations.  So how can we find out something that’s not here?
 
 --
 
@@ -113,35 +123,23 @@ Freedom of Information Act (FOIA), 5 U.S.C. § 552
 
 # Sources of Data
 
-
-
-<img src="/slides/assets/img/government-data/dccode.png" width="300" align="left" style="padding-right: 20px"> An informal ask is sometimes the easiest method or the best place to start.
-
-&nbsp;
-
-> To that point – sometimes it’s easier to just ask for the data from an official directly rather than going through the whole FOIA request.  A few years ago, a couple of legal hackers here in DC went to the D.C. Council’s General Counsel, a [Mr. Dave Zvenyach](https://esq.io/), and asked for the entire DC code.  After some back and forth, the code was released as public domain data and dccode.org was born, displaying the code using a modern interface.
-
---
-
-# Sources of Data
-
-<img src="/slides/assets/img/government-data/drafts-dc.png" width="300" align="left" style="padding-right: 20px">
+<img src="/slides/assets/img/government-data/dccode.png" width="300" align="left" style="padding-right: 20px"> <img src="/slides/assets/img/government-data/dcgovcode.png" width="300" style="padding-right: 20px">
 
 An informal ask is sometimes the easiest method or the best place to start.
 
 &nbsp;
 
-> A little while later, over at OpenGov Foundation we asked city counselors and the mayor’s office to post bills online on our Madison project, which ended up becoming drafts.dc.gov and is still in use today.  None of this was through official legal action or paying costly fees – just people talking to each other and getting excited about doing good work.
+> To that point – sometimes it’s easier to just ask for the data from an official directly rather than going through the whole FOIA request.  A few years ago, a couple of legal hackers here in DC went to the D.C. Council’s General Counsel, a Mr. Dave Zvenyach, and asked for the entire DC code.  After some back and forth, the code was released as public domain data and dccode.org was born, displaying the code using a modern interface.  None of this was through official legal action or paying costly fees – just people talking to each other and getting excited about doing good work. Since then, the DC government has created a new website for their law code, which provides HTML and XML downloads of the code for everyone.
 
 --
 
 # Sources of Data
 
-* There are ongoing court cases over what is public domain and what isn’t. (Building codes, etc.)
-* The government may charge for access. These costs may be prohibitively high. (FOIA, PACER)
-* Not everything is FOIA-able.
+* There are ongoing court cases over what is in public domain. (Building codes, etc.)
+* The government may charge for access. (FOIA, PACER)
+* Not everything is FOIA-able. (Personal privacy, government security, etc.)
 
-> Now, things don’t always go quite so smoothly.  There are a lot of potential barriers between you and the data you want.  First off, not all data that should be public domain necessarily is.  For instance, though our legal codes are largely public domain data, there are currently pending court cases around law that is under copyright, such as building codes.  You’re going to be hearing a lot more about this in your next session of this course, so I won’t go into this now.
+> Now, things don’t always go quite so smoothly.  There are a lot of potential barriers between you and the data you want.  First off, not all data that should be public domain necessarily is.  For instance, though our legal codes are largely public domain data, there are currently pending court cases around law that is under copyright, such as building codes.  You’re going to be hearing a lot more about this in a later session of this course, so I won’t go into this now.
 
 > Besides that, as I mentioned before, there might be costs charged by the agency for retrieving the data.  One of the most well-known instances of this is PACER, the US Courts record system, which charges you per result returned for searches on its website.  The biggest problem here is that you don’t know how many results will be returned until after you search.  There’s currently an ongoing class action lawsuit around PACER, which contends that the fees are higher than they legally should be. (1/2)
 
@@ -149,13 +147,13 @@ An informal ask is sometimes the easiest method or the best place to start.
 
 # Sources of Data
 
-* There are ongoing court cases over what is public domain and what isn’t. (Building codes, etc.)
-* The government may charge for access. These costs may be prohibitively high. (FOIA, PACER)
-* Not everything is FOIA-able.
+* There are ongoing court cases over what is in public domain. (Building codes, etc.)
+* The government may charge for access. (FOIA, PACER)
+* Not everything is FOIA-able. (Personal privacy, government security, etc.)
 
-> I also have already mentioned that plenty of data is not FOIA-able.  This can often be surprising,  for instance we routinely find that records have been stored with personally identifiable information such as names, addresses, and even social security numbers – and this data may be hard or costly for agencies to clean.
+> I also have already mentioned that plenty of data is not FOIA-able.  If there are privacy or security concerns, that data does not have to be released. We routinely find that records have been stored with personally identifiable information such as names, addresses, and even social security numbers – and this data may be hard or costly for agencies to clean. One data set I work with daily is the list of all data centers in the United States - if we were to publish this data with addresses, it’d make for a nice list of targets for any ne’er-do-wells.
 
-> As a side note, you might also find that the agencies have done a poor job of cleaning their data before providing it to you, putting you in a position where you have to remove personal data from your tools very quickly and with very little warning.  I’ve seen this happen more than a few times.  Most recently, I had a person contact our organization to ask us to remove a public document honoring them for an achievement, because they were facing harassment and didn’t want to give their attackers more ammunition.  Though we had no legal requirement to do so, the ethical thing to do was to simply remove the document.
+> As a side note, you might also find that the agencies have done a poor job of cleaning their data before providing it to you, putting you in a position where you have to remove personal data from your tools very quickly and with very little warning. You can’t always read everything when you’re dealing with large data sets, so pay attention to what you’re publishing, and be responsive to any requests you receive.
 
 --
 
@@ -164,7 +162,6 @@ An informal ask is sometimes the easiest method or the best place to start.
 * Most of the time, the first goal is to get the data into a database.
 * Translate the data from the provided format to a usable format.
 * Lightweight, verbose scripting languages are the easiest way to do this. (Python, Ruby, Javascript)
-* Most languages already have libraries for common formats, such as CSV, Excel, XML, and JSON.
 
 > Now, this gives us a taste of what is needed to clean our data for presentation.  At a more basic level, we generally have to do some work just to get our data into something useful – it’s rare that we use the data in the same form that we received it in.  Assuming we’ve received a Word document or spreadsheet or something, most of the time the first thing we want to do is get it into a database of some sort, so we can store it and manipulate it. Even if we’re not using a database, we’ll want to use some sort of programming language to translate our data into something useful (1/2)
 
@@ -175,19 +172,31 @@ An informal ask is sometimes the easiest method or the best place to start.
 * Most of the time, the first goal is to get the data into a database.
 * Translate the data from the provided format to a usable format.
 * Lightweight, verbose scripting languages are the easiest way to do this. (Python, Ruby, Javascript)
-* Most languages already have libraries for common formats, such as CSV, Excel, XML, and JSON.
 
 >  – another type of document or whatever.  I recommend choosing a nice, general-purpose scripting language that’s flexible such as Python, Ruby, or Javascript.  These all have the advantage of having native libraries to work with many of the formats we’ll be encountering, from CSVs and Excel files, to Word Documents, XML files, and JSON APIs.  And by using a native library, we reduce the amount of code we have to write, and - more importantly – the number of things we might do wrong.
 
 --
 
-# Cleaning Data: PDFs
+# PDF
 
 * PDFs are notoriously hard to extract data from
 * Often, paper documents scanned as images. Text content is lost in this process.  OCR (optical character recognition) tools to extract text from the images. (e.g. Tesseract)
 * Content may be broken up in complicated ways preventing reassembling by tools.
 
-> Just a quick side note.  There’s a running joke in civic tech about how bad PDFs are, and this is well-warranted.  Agencies scan paper documents as images, which are embedded in the PDF file. This is basically a photograph of the document, so the “text” is not digitally available. Which means, you can’t copy and paste selections from it into other documents or extract meaning from it via automated means. Your computer doesn’t “know” what the text says as it does with a standard document like a Word file. In these cases, you’ll need to use an OCR (optical character recognition) tool to extract the text from the images. (e.g. Tesseract)  These tools “read” the document and try to guess what the characters are.  Even if the PDF has real text in it, it may be broken up in ways that prevent you from automatically getting that content back out.  For instance, if you have a document with two columns, or a table of values, in the source of the document, those may be jumbled such that the data all runs together.  This can make it almost impossible to get the content you want back out of the document.
+> Just a quick side note.  There’s a running joke in civic tech about how bad PDFs are, and this is well-warranted.  Agencies scan paper documents as images, which are embedded in the PDF file. This is basically a photograph of the document, so the “text” is not digitally available. Which means, you can’t copy and paste selections from it into other documents or extract meaning from it via automated means. Your computer can’t “read” what the text says as it does with a standard document like a Word file. In these cases, you’ll need to use an OCR (optical character recognition) tool to extract the text from the images. (e.g. Tesseract)  These tools scan the document and try to guess what the characters are.  Even if the PDF has real text in it, it may be broken up in ways that prevent you from automatically getting that content back out.  For instance, if you have a document with two columns, or a table of values, in the source of the document, those may be jumbled such that the data all runs together.  This can make it almost impossible to get the content you want back out of the document.
+
+
+--
+
+# The Simplest Scraper
+
+Command Line:
+
+```
+wget https://vacode.org/1-1.json
+```
+
+> So here’s the simplest possible web scraper.  This is just a command line utility that downloads a file from the internet; it’s really just doing what your web browser (like Chrome, Firefox, or Internet Explorer) do behind the scenes.  This is connecting to the VA Code website and downloading a single law – section 1-1 – as a JSON file. We’re not doing anything with the file in this example, though - so we need to get a little fancier.
 
 --
 
@@ -205,24 +214,21 @@ law = json.loads(response.text)
 print law['section_number'] + ': ' + law['catch_line']
 ```
 
-> Ok, so let’s see what this actually looks like.  Here’s a very simple scraper.  We’re using Python as our language of choice to connect to the VA Code website and download a single law – section 1-1 – as a JSON file.  We’re using the Python requests library to do all the remote file getting, and the json library to turn the json into an object that Python understands. We then take that object and print out the section number and catch line of the law.  You could just as easily turn this into another type of file here, put it into a database or web page, or really anything else.
+> Here we’re using Python as our language of choice  We’re using the requests library to go get the file, and a library to turn the json data we downloaded into an object that Python understands. We then take that object and print out the section number and catch line of the law.  You could just as easily turn this into another type of file here, put it into a database or web page, or really anything else.
 
 --
 
-# A Less Simple Scraper
-
-
-> Here is a far less simple web scraper; this is one small piece of the code that gets legislation from the GPO FDSys and scrapes them for the GovTrack site.
-
-<img src="/slides/assets/img/government-data/govtrack-scraper1.png" width="300"> <img src="/slides/assets/img/government-data/govtrack-scraper2.png" width="300">
-
---
 
 # A Less Simple Scraper
+
+> Here is a far less simple web scraper; this is one small piece of the code that gets US legislation from the GPO FDSys and scrapes them for the GovTrack website. Drilling into the code a bit, it’s really not that much more complicated than our previous example.  We’re using a lot of the same libraries, we’re still reading the file in, and we’re doing some parsing. This time we’re using an XML file instead of a JSON file, and instead of printing out the results, we’re taking our resulting bill data and reformatting it for more processing later.  Note that we’re doing a little bit of cleaning in here as well - that call to the lower() function for the bill type is changing the type into all lowercase text.  This helps to make it easier to compare to other data later, so we don’t have to worry about the case not matching up, capital-B Bill versus all lowercase bill versus all capitals BILL.
 
 Python:
 ```
 import json
+import logging
+import os
+import re
 import xmltodict
 
 …
@@ -240,11 +246,6 @@ import xmltodict
         'url': billstatus_url_for(bill_id),
 ```
 
---
-
-# A Less Simple Scraper
-
-> Drilling into the code a bit, it’s really not that much more complicated than our previous example.  Don’t let the long names here scare you off – we’re using a lot of the same libraries, we’re still reading the file in, and we’re doing some parsing. This time we’re using an XML file instead of a JSON file, and instead of printing out the results, we’re taking our resulting data and reformatting it into an object that’s shaped slightly different for more processing later.  Note that we’re doing a little bit of cleaning in here as well - that call to the lower() function for the bill type is changing the type into all lowercase text.  This helps to make it easier to compare to other data later, so we don’t have to worry about the case not matching up, capital-B Bill versus all lowercase bill versus all capitals BILL.
 
 --
 
@@ -252,23 +253,11 @@ import xmltodict
 
 Ways of getting to the thing you’re looking for in the data, once you know where it is.
 
-* Object properties  `laws['2-10']['title']`
-* HTML selectors `soup.findAll('table.laws .title’)`
-* XML: XPath/XQuery (lxml) `soup.find(‘metadata/*/title’)`
+* Object properties: `laws['2-10']['title']`
+* HTML selectors: `soup.findAll('table.laws .title’)`
+* XML (XPath/XQuery, lxml): `soup.find(‘metadata/*/title’)`
 
-> The most important thing to know here is how to get at the pieces of data you actually want to use.  You may have a large spreadsheet with several hundred items, or a huge data file with dozens of properties, and you need a way to isolate just the pieces you care about.  Here are a couple of the ways we do that.  The most common way is to turn our data into a native object in the language of our choice – through something like the json translation example we saw in our scraper – and then traversing the properties of the object to get to the piece we care about.  In this first example, we have an array of laws, and we’re trying to get the title of section 2-10.  (1/3)
-
---
-
-# Data Traversal
-
-Ways of getting to the thing you’re looking for in the data, once you know where it is.
-
-* Object properties  `laws['2-10']['title']`
-* HTML selectors `soup.findAll('table.laws .title’)`
-* XML: XPath/XQuery (lxml) `soup.find(‘metadata/*/title’)`
-
-> The next example is using a Python library called Beautiful Soup to parse an HTML document – which is just a normal web page like you’d find on any site – to get the title of all laws in a table of laws.  This is looking for the HTML element that is a table and has a class of “laws”, and then for each of those finding the element with a class of “title”.  Now, this method works great if you have a nicely marked up web page.  If you don’t you’ll have to resort to uglier methods, like counting to the third table on the page and the fourth column in that table, or whatever. No matter how you go about it, just know that we have rather friendly ways of getting data out of web pages. (2/3)
+> The most important thing to know is how to get at the pieces of data you actually want to use.  You may have a large spreadsheet with hundreds of rows and columns, and you need a way to isolate just the pieces you care about.  Here are a couple of the ways we do that.  The most common way is to traverse the properties of a data object to get to the piece we care about.  In this first example, we have a spreadsheet of laws, and we’re trying to get the title of section 2-10.   In most languages, you’ll have a way of drilling down through a collection of items to get to the pieces you need, and in most languages the syntax will be very similar to this.  (1/3)
 
 --
 
@@ -276,9 +265,22 @@ Ways of getting to the thing you’re looking for in the data, once you know whe
 
 Ways of getting to the thing you’re looking for in the data, once you know where it is.
 
-* Object properties  `laws['2-10']['title']`
-* HTML selectors `soup.findAll('table.laws .title’)`
-* XML: XPath/XQuery (lxml) `soup.find(‘metadata/*/title’)`
+* Object properties: `laws['2-10']['title']`
+* HTML selectors: `soup.findAll('table.laws .title’)`
+* XML (XPath/XQuery, lxml): `soup.find(‘metadata/*/title’)`
+
+> The next example is using a Python library called Beautiful Soup to parse a webpage, an HTML document, to get the title of all laws in a table of laws.  This is looking for the HTML element that is a table and has a class of “laws”, and then for each of those finding the element with a class of “title”.  Now, this method works great if you have a nicely marked up web page.  If you don’t you’ll have to resort to uglier methods, like counting to the third table on the page and the fourth column in that table, or whatever. No matter how you go about it, just know that we have rather friendly ways of getting data out of web pages.
+
+--
+
+# Data Traversal
+
+Ways of getting to the thing you’re looking for in the data, once you know where it is.
+
+* Object properties: `laws['2-10']['title']`
+* HTML selectors: `soup.findAll('table.laws .title’)`
+* XML (XPath/XQuery, lxml): `soup.find(‘metadata/*/title’)`
+
 
 > Now, HTML and XML are very closely related, so we can use a similar methodology to get data out of an XML file.  XML has a large number of dedicated tools and methods for this, which include XPath and XQuery, which are ways of finding data in XML files. The lxml library provides these for us, and when used with Beautiful Soup in Python, we can again get our data similarly to how we do in an HTML file.  In this last example, we’re finding a title element that is nested under a metadata element, anywhere in our document.
 
@@ -287,7 +289,7 @@ Ways of getting to the thing you’re looking for in the data, once you know whe
 # Cleaning Data
 
 * Look at a lot of data
-* String/Number manipulation
+* Text/Number manipulation
 * Regular Expressions (RegExp / regex / grep)
 * Natural Language Processing (NLP)
 * Look at your data some more
@@ -300,39 +302,39 @@ Ways of getting to the thing you’re looking for in the data, once you know whe
 # Cleaning Data
 
 * Look at a lot of data
-* String/Number manipulation
+* Text/Number manipulation
 * Regular Expressions (RegExp / regex / grep)
 * Natural Language Processing (NLP)
 * Look at your data some more
 * Peer Review
 
-> The most used tool in our toolbox for cleaning up data is String manipulation.  You remember Strings from your data types reading? We can perform operations on strings to manipulate them in powerful ways.  You saw the example a few slides back of changing a string into all-lowercase letters, this is a common one.  You might also have to handle “special” characters – all those letters with umlauts and accents, symbols, anything that might cause problems in processing later.  You might want to combine several strings into one, like combining first and last name into just a “name” field. Or you might need to split a string into several pieces, like in the State Decoded, we often receive data where the law section number and the law title are squeezed into one field, so we have to split out the number from the beginning of the line. You can largely work with numbers in the same way, and you’re probably familiar with doing this in spreadsheets already – adding several columns together, or averaging numbers, and so on. All of these can be handled using built-in features of the programming languages, and pretty much all languages have these features. (2/4)
+> The most used tool in our toolbox for cleaning up data is text and number manipulation.  If you’ve spent much time working with Excel, you’re probably familiar with these - maybe you’re adding columns together to get totals, or getting averages. Or the example a few slides back of changing a string into all-lowercase letters, that’s a common use case. You might want to combine several strings into one, like combining first and last name into just a “name” field. Or you might need to split a string into several pieces, like in the State Decoded, we often receive data where the law section number and the law title are squeezed into one field, so we have to split out the number from the beginning of the line. All of these can be handled using built-in features in most programming languages. (2/4)
 
 --
 
 # Cleaning Data
 
 * Look at a lot of data
-* String/Number manipulation
+* Text/Number manipulation
 * Regular Expressions (RegExp / regex / grep)
 * Natural Language Processing (NLP)
 * Look at your data some more
 * Peer Review
 
-> Now in some cases, these law number-title pieces are too complicated to just split out by string manipulation.  Maybe some laws have the word “Repealed” before the section number. Or maybe the section number has letters instead of just numbers in one chapter. Or maybe for whatever reason the publisher has used the section symbol before the number in one part, the word “section” in another, and the abbreviation “sec” in yet another.  I’ve seen all of these, by the way.    In these cases, we want to match the pattern of the text.  We can describe rules for these patterns: if the number is proceeded by the word repealed or a section symbol or the word section then ignore that bit and keep going.  Regular Expressions are a pattern language we use to describe these sorts of rules, and find the bits of text we care about.  You can think of it as a smarter version of string manipulation.  You might all here these called “RegExp” or “regex”. Or “grep” which is actually a tool made for regular expression handling, not the language itself. (3/4)
+> Now in some cases, these law number-title pieces are too complicated to just split out by text manipulation.  Maybe some laws have the word “Repealed” before the section number. Or maybe for whatever reason the publisher has used the section symbol before the number in one part, the word “section” in another, and the abbreviation “sec” in yet another.  In these cases, we want to match the pattern of the text.  If you can describe a rule for the pattern you can usually translate it into programming code. For instance, if there’s a number proceeded by the word repealed or a section symbol or the word section then ignore that bit and just get the number.  Regular Expressions are a pattern language we use to describe these sorts of rules, and find the bits of text we care about.  You might all here these called “RegExp” or “regex”. Or “grep” which is actually a tool made for regular expression handling, not the language itself. (3/4)
 
 --
 
 # Cleaning Data
 
 * Look at a lot of data
-* String/Number manipulation
+* Text/Number manipulation
 * Regular Expressions (RegExp / regex / grep)
 * Natural Language Processing (NLP)
 * Look at your data some more
 * Peer Review
 
-> Past that, we can do some analysis of the text itself to look for commonalities, which can reveal inconsistencies.  For instance, we might want to know where in a legal code the legal definitions are, based on specific language like “A means B.” We can use a variety of Natural Language processing tools to help us do that.  Now, this tends to be more of an analysis tool than a purely cleaning tool, but can be very useful for helping to identify trends in the data. In many cases the NLP may be the end goal itself, so that you can report on trends in text.
+> Past that, we can do some analysis of the text itself. For instance, we might want to know where in a legal code the legal definitions are, based on specific language like “A means B.” We can use a variety of Natural Language Processing tools to help us do that.  Now, this tends to be more of an analysis tool than a purely cleaning tool, and can be very useful for helping to identify trends in the data. In many cases the NLP may be the end goal itself, so that you can report on trends in text.
 Once you’ve gone through all of this, look at your data more.  You’re probably going to continue to find problems that you need to code around, over and over.  It would often take me two weeks to clean up a legal code enough to be re-published in The State Decoded, and I still wouldn’t find everything. Just keep working through it until you’re satisfied.
 Then find a friend who knows a little about the field and get them to kick the tires for you – a little unofficial peer review can go a long way towards better data quality.  This is probably the most important step in the process, so don’t skip it. (4/4)
 
@@ -413,13 +415,22 @@ Then find a friend who knows a little about the field and get them to kick the t
 # Digression: API Types
 
 * SOAP (not used much these days) (XML, WSDL)
-* XML-RPC (still used some)
-* REST (most common today)
-* GraphQL (new & trendy, but not used much yet)
+* XML-RPC (still used some) (XML)
+* REST (most common today) (JSON)
+* GraphQL (new & trendy) (JSON)
 
 > I do want to take a quick step back here and dig in a bit on a concept from your reading, and that is “What is an API”?  Because there are many types of APIs, and this gets glossed over too often.   An API is most commonly a piece of software, running on a computer connected to the internet, that other computers can ask for data. Now, we can ask for data in a variety of different ways, but your API probably only knows how to respond to one flavor of ask. Here are the most common types – you’ll need to know what type you’re dealing with to be able to interact with an API.
 
-> SOAP is an older type of API, and if you mention it around us older developers we will frequently grumble and groan and scoff and make dismissive noises.  SOAP stands for Simple Object Access Protocol, and it uses XML to both make requests and send responses.  You also will frequently see the term WSDL in connection with SOAP, which stands for Web Service Definition Language – it’s a way for the API server to tell the person requesting more about what data it has available and how to get access to it, again this is all through XML. (1/3)
+--
+
+# Digression: API Types
+
+* SOAP (not used much these days) (XML, WSDL)
+* XML-RPC (still used some) (XML)
+* REST (most common today) (JSON)
+* GraphQL (new & trendy) (JSON)
+
+> SOAP is an older type of API, and if you mention it around us older developers we will frequently grumble and groan and scoff and make dismissive noises.  SOAP stands for Simple Object Access Protocol, and it uses XML to both make requests and send responses.  You also will frequently see the term WSDL in connection with SOAP, which stands for Web Service Definition Language – it’s a way for the API server to tell the person requesting more about what data it has available and how to get access to it, again this is all through XML.
 
 --
 
@@ -431,7 +442,7 @@ Then find a friend who knows a little about the field and get them to kick the t
 * GraphQL (new & trendy, but not used much yet)
 
 > XML RPC is similar to SOAP in a lot of ways, but it’s much, much simpler. You’re still using XML to make and receive requests.
-REST is the most popular API method today, it’s incredibly simple.  Instead of sending complicated XML documents, you simply use a url to ask for data - the same way that you type web site urls into your browser to pull up google or gmail.  This is the method we saw way back in the simple scraper example, where we requested a JSON file for a particular law from State Decoded.  There are similar methods in REST as well for submitting new data to the server and updating existing data.  This is all designed to be very web-browser-friendly, using the same methods that we had already been using to interact with web pages. As a result, developers *love* this.  It does have a few major drawbacks.  Often, a REST API is going to either give you way more or way less information than you need, which in both cases slows down your requests – because moving more data is slower, and having to ask repeatedly for more information is also very slow. (2/3)
+REST is the most popular API method today, it’s incredibly simple.  Instead of sending complicated XML documents, you simply use a url to ask for data - the same way that you type web site urls into your browser to pull up google or gmail.  This is the method we saw way back in the simple scraper example, where we requested a JSON file for a particular law from State Decoded.  There are similar methods in REST as well for submitting new data to the server and updating existing data.  This is all designed to be very web-browser-friendly, using the same methods that we had already been using to interact with web pages. As a result, developers *love* this.  It does have a few major drawbacks.  Often, a REST API is going to either give you way more or way less information than you need, which in both cases slows down your requests – because moving more data is slower, and having to ask repeatedly for more information is also very slow.
 
 --
 
@@ -442,7 +453,7 @@ REST is the most popular API method today, it’s incredibly simple.  Instead of
 * REST (most common today)
 * GraphQL (new & trendy, but not used much yet)
 
-> GraphQL is the newest API type and aims to solve these problems.  It was created by Facebook in 2012, and like most of their projects it’s designed to make working with data on the web (and mobile apps) easier.  But as I said, it’s really new and hasn’t gained wide adoption yet.  Personally, I haven’t had an opportunity to use it in any professional projects yet, but I’m very excited about it – it’s really, really well thought out. (3/3)
+> GraphQL is the newest API type and aims to solve these problems.  It was created by Facebook in 2012, and lets you ask for exactly the data that you want from a server.  It’s still relatively new and hasn’t gained wide adoption yet.
 
 --
 
@@ -450,7 +461,7 @@ REST is the most popular API method today, it’s incredibly simple.  Instead of
 
 * Write about how you solved the problem. (blog/documentation/README)
 * Share your code. (GitHub)
-* Share your data. (dat project, github, blog, etc.)
+* Share your data. (dat project, GitHub, blog, etc.)
 * Use open licenses! (GPL, MIT, Apache2, CC0)
 
 > Ok, end digression.  So you’ve done all this fantastic work, and you’ve shared the results with the world.  Now you should consider sharing the actual work as well. In the civic technology community, we have a very strong ethic of sharing and reusability. The easiest way to share your work is to write down how you did it.  Adding documentation on your methodology, writing blog posts, or just adding comments to your programming code – is a fantastic way to let others build on your work.
